@@ -1,0 +1,46 @@
+Pilhas são executadas em FIFO (First in - First out)
+
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Consolezinho
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            {
+                Stack<int> stack = new Stack<int>();
+
+                stack.Push(6);
+                stack.Push(100);
+                stack.Push(5);
+                stack.Push(111);
+                stack.Pop();
+                stack.Pop();
+                stack.Pop();
+                stack.Push(900);
+                foreach (int item in stack)
+                {
+                    Console.WriteLine($"Valores da Pilha: {stack.Peek()}");
+                }
+            }
+        }
+    }
+}
+    
+List<string> myList = new List<string>();   
+
+for(int i = 0; i < 100000; i++)
+{
+    string guid = Guid.NewGuid().ToString();.split('-')[2];
+    myList.Add(guid);
+    Console.WriteLine(guid);
+}
+bool hasDuplicated = myList.GroupBy(x => x).Any(g => g.Count() > 1);
+Console.WriteLine(hasDuplicated);
